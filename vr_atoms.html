@@ -4,8 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
         <title>Babylon - Getting Started</title>
         <!--- Link to the last version of BabylonJS --->
-        <!-- <script src="https://preview.babylonjs.com/babylon.js"></script> -->
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/babylon.js"></script>
+        <!-- <script src="https://cdn.babylonjs.com/babylon.js"></script> -->
         <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
         <style>
             html,
@@ -60,7 +60,7 @@
                     const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 1000.0 }, scene);
                     const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
                     skyboxMaterial.backFaceCulling = false;
-                    skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("res/skybox/skybox", scene);
+                    skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("https://imgur.com/a/wZtlpSw/skybox", scene);
                     skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
                     skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
                     skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
