@@ -79,10 +79,10 @@
                     BABYLON.SceneLoader.Append("./res/models/", "table.glb", scene, function (scene) {});
                     
                     // Add XR support
-                    // var xr = await scene.createDefaultXRExperienceAsync({
-                    //     /* configuration options, as needed */
-                    //     floorMeshes: [ground]
-                    // })
+                    var xr = await scene.createDefaultXRExperienceAsync({
+                        /* configuration options, as needed */
+                        floorMeshes: [ground]
+                    })
                     // var xrSession = await BABYLON.WebXR.simpleScene.createAsync({
                     //     scene: scene,
                     //     onFrame: (session) => {
