@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello!</title>
+    <title>Projects</title>
+    <style>
+        /* Define the styles for the button */
+        button {
+            background-color: gray;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Define a container for the button */
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
     <script>
         function redirect() {
-            window.location.href = "vr_atoms/index.html";
+            window.location.href = "vr_atoms.html";
         }
     </script>
 </head>
 <body>
-    <button onclick="redirect()">VRAtoms</button>
+    <div class="center">
+        <button onclick="redirect()">Click to redirect to VRAtoms</button>
+    </div>
 </body>
 </html>
