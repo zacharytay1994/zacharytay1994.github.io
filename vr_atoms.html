@@ -37,9 +37,6 @@
                     // create a basic BJS Scene object
                     var scene = new BABYLON.Scene(engine);
 
-                    // Add XR support
-                    var xr = await scene.createDefaultXRExperienceAsync({/* configuration options, as needed */})
-
                     // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
                     var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 2, -5), scene);
 
@@ -59,8 +56,52 @@
                     var hdrTexture = new BABYLON.HDRCubeTexture("https://www.babylonjs.com/assets/room.hdr", scene, 512);
                     var currentSkybox = scene.createDefaultSkybox(hdrTexture, true);
 
+                    // picked object
+                    // var pickedObject;
+                    // add scene stuff
+                    // box
+                    // const box = BABYLON.MeshBuilder.CreateBox("box", {});
+                    // const boxMaterial = new BABYLON.StandardMaterial("material", scene);
+                    // boxMaterial.diffuseColor = BABYLON.Color3.Random();
+                    // box.material = boxMaterial;
+                    // box.position.y = 1;
+
+                    // // controls for the box
+                    // box.actionManager = new BABYLON.ActionManager(scene);
+                    // box.actionManager.registerAction(
+                    // new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickTrigger, 
+                    // function (event) {
+                    //     var pickedObject = event.meshUnderPointer;
+                    //     pickedObject.position.x += 1;
+                    // }));
+
                     // Append glb table model to scene.
                     BABYLON.SceneLoader.Append("./res/models/", "table.glb", scene, function (scene) {});
+                    
+                    // Add XR support
+                    var xr = await scene.createDefaultXRExperienceAsync({
+                        /* configuration options, as needed */
+                        floorMeshes: [ground]
+                    })
+                    // var xrSession = await BABYLON.WebXR.simpleScene.createAsync({
+                    //     scene: scene,
+                    //     onFrame: (session) => {
+                    //         // This function is called every frame
+                    //         // You can use the XR inputs to pick up and move objects
+                    //         var input = session.input;
+
+                    //         // check if primary controller is pressed
+                    //         if (input.primaryButtonDown) {
+                    //             // check if we already picked an object
+                    //             // if (pickedObject) {
+                    //             //     // move the object
+                    //             //     pickedObject.translate(input.primary.deltaPosition, 0);
+                    //             // } 
+                    //         }
+                    //     }
+                    // });
+                    // await scene.whenReadyAsync();
+                    // await xrSession.startAsync();
 
                     // return the created scene
                     return scene;
