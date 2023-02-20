@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="table" src="Assets/HavelockHillside/cube.gltf"></a-asset-item>
+        <img id="sky" src="Assets/HavelockHillside/HavelockHillside_1.jpeg">
+      </a-assets>
+      <a-sky src="#sky"></a-sky>
+      <a-entity glb-model="#table" position="-1 0.5 -3" ></a-entity>
+    </a-scene>
+  </body>
+</html>
