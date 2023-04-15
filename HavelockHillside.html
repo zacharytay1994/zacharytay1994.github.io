@@ -5,16 +5,26 @@
 </head>
 
 <body>
+  <script>
+    AFRAME.registerComponent('hello-world', {
+      init: function() {
+        console.log('Hello, world!');
+        this.el.setAttribute("material", "src", "Assets/HavelockHillside/test.jpg");
+      }
+    });
+  </script>
   <a-scene>
     <a-assets>
-      <a-asset-item id="unit" src="Assets/HavelockHillside/havelock_hillside_365.gltf"></a-asset-item>
-      <img id="sky" src="Assets/HavelockHillside/HavelockHillside_98A_45_635_000.jpeg">
+      <a-asset-item id="unit" src="Assets/HavelockHillside/hh_model_v1.gltf"></a-asset-item>
+      <img id="sky" src="Assets/HavelockHillside/HavelockHillside_98A_45_635_000.jpeg"></img>
+      <img id="test" src="Assets/HavelockHillside/test.jpg"></img>
     </a-assets>
     <a-sky src="#sky"></a-sky>
-    <a-entity gltf-model="#unit" position="-0.9 1.35 -0.2" rotation="0 120 0" scale="10 10 10"></a-entity>
+    <a-entity hello-world gltf-model="#unit" material="src: #test" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-entity>
 
+    <a-entity geometry="primitive: box" material="src: #test"></a-entity>
     <!-- camera -->
-    <a-entity position="0 0 0" rotation="0 90 0">
+    <a-entity position="15 50 25" rotation="0 90 0">
       <a-camera></a-camera>
     </a-entity>
   </a-scene>
